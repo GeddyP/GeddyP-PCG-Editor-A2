@@ -205,6 +205,9 @@ void PCG::TileMap::SaveMapImage(const char* filename) const {
 // ============================================= 
 char PCG::TILE_TYPE_TO_SET = '.';
 
+char* PCG::MAP_TEXT_FILENAME = "pcg_map_data.txt";
+char* PCG::MAP_IMAGE_FILENAME = "pcg_map.png";
+
 void PCG::TileMap::DrawGUI() {
     // Reset Button
     if (GuiButton(RESET_BUTTON_BOUNDS, "Reset Map")) {
@@ -213,6 +216,12 @@ void PCG::TileMap::DrawGUI() {
         GetMapGenerator()->Generate(tileArray);
     }
 
+    // Name Text Box Input
+    static char filenameInput[100] = "pcg_map_data.txt"; // Buffer for text input
+    Rectangle textBoxRect = { PCG::BUTTON_X, PCG::BUTTON_Y - PCG::SCREEN_HEIGHT + 80, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    GuiTextBox(textBoxRect, filenameInput, sizeof(filenameInput), true); // Text box for filename input
+    PCG::MAP_TEXT_FILENAME = filenameInput; // Update the text filename variable with the text box input
+    PCG::MAP_IMAGE_FILENAME = filenameInput; // Update the image filename variable with the text box input
 
     // Save Data Button
     Rectangle saveRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 70, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };

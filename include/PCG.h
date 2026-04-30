@@ -34,8 +34,8 @@ namespace PCG {
     extern char TILE_TYPE_TO_SET; // This variable determines which tile type will be set when the user clicks
 
     // File Names
-    constexpr char* MAP_TEXT_FILENAME = "pcg_map_data.txt";
-    constexpr char* MAP_IMAGE_FILENAME = "pcg_map.png";
+    extern char* MAP_TEXT_FILENAME;
+    extern char* MAP_IMAGE_FILENAME;
 
     // Pure Virtual Class
     class MapGenerator {

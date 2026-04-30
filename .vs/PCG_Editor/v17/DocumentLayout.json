@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "include\\PCG.h",
               "ToolTip": "E:\\Raylib\\Projects\\A2\\GeddyP PCG Editor A2\\include\\PCG.h",
               "RelativeToolTip": "include\\PCG.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACEAAABuAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-28T09:08:18.278Z",
               "IsPinned": true,
@@ -46,7 +46,7 @@
               "RelativeDocumentMoniker": "src\\PCG.cpp",
               "ToolTip": "E:\\Raylib\\Projects\\A2\\GeddyP PCG Editor A2\\src\\PCG.cpp",
               "RelativeToolTip": "src\\PCG.cpp",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAAAPQAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAAN4AAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-28T09:12:20.391Z",
               "EditorCaption": ""
@@ -61,8 +61,7 @@
               "RelativeToolTip": "src\\main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-28T08:43:27.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-28T08:43:27.639Z"
             }
           ]
         }
