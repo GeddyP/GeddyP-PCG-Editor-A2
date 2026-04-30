@@ -203,6 +203,8 @@ void PCG::TileMap::SaveMapImage(const char* filename) const {
 // ============================================= 
 // void PCG_DrawGUI()
 // ============================================= 
+char PCG::TILE_TYPE_TO_SET = '.';
+
 void PCG::TileMap::DrawGUI() {
     // Reset Button
     if (GuiButton(RESET_BUTTON_BOUNDS, "Reset Map")) {
@@ -229,6 +231,18 @@ void PCG::TileMap::DrawGUI() {
     Rectangle imgRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 210, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
     if (GuiButton(imgRect, "Save Map PNG")) {
         SaveMapImage(MAP_IMAGE_FILENAME);
+    }
+
+    // Set Tile Type to Land Button
+	Rectangle landRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 280, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    if (GuiButton(landRect, "Set Tile: Land")) {
+        PCG::TILE_TYPE_TO_SET = '.';
+    }
+
+    // Set Tile Type to Ocean Button
+    Rectangle oceanRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 350, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    if (GuiButton(oceanRect, "Set Tile: Ocean")) {
+        PCG::TILE_TYPE_TO_SET = '#';
     }
 
 }

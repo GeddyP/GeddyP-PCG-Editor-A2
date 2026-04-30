@@ -30,6 +30,9 @@ namespace PCG {
     constexpr int BUTTON_Y = (SCREEN_HEIGHT - BUTTON_HEIGHT - 20);
     constexpr Rectangle RESET_BUTTON_BOUNDS = { BUTTON_X, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT };
 
+    // Manual Edit Settings
+    extern char TILE_TYPE_TO_SET; // This variable determines which tile type will be set when the user clicks
+
     // File Names
     constexpr char* MAP_TEXT_FILENAME = "pcg_map_data.txt";
     constexpr char* MAP_IMAGE_FILENAME = "pcg_map.png";

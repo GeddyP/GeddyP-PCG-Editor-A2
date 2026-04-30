@@ -28,7 +28,13 @@ int main() {
         if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
             Vector2 mousePos = GetMousePosition();
             std::cout << "Mouse clicked at: (" << mousePos.x << ", " << mousePos.y << ")" << std::endl;
-            tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_LAND);
+            if (PCG::TILE_TYPE_TO_SET == '.') {
+                tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_LAND);
+            }
+            else if (PCG::TILE_TYPE_TO_SET == '#') {
+                tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_OCEAN);
+            }
+            //tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_LAND);
         }
 
     }
