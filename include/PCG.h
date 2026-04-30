@@ -11,16 +11,25 @@ namespace PCG {
 
     // Tile Types (Using Enum for readability)
     typedef enum {
-        TILE_TYPE_LAND = 0,
-        TILE_TYPE_OCEAN = 1,
+        TILE_TYPE_DEEPLAND = 5,
+        TILE_TYPE_LAND = 4,
+        TILE_TYPE_BEACH = 3,
+        TILE_TYPE_OCEAN = 2,
+        TILE_TYPE_DEEPOCEAN = 1,
         TILE_COUNT  // Automatically counts total types
     } TileType;
 
     // Visual & Character settings
-    constexpr char LAND_CHAR = '.';
-    constexpr char OCEAN_CHAR = '#';
-    constexpr Color LAND_COLOR = { 83, 185, 75, 255 };
+    constexpr char DEEPLAND_CHAR = '5';
+    constexpr char LAND_CHAR = '4';
+    constexpr char BEACH_CHAR = '3';
+    constexpr char OCEAN_CHAR = '2';
+    constexpr char DEEPOCEAN_CHAR = '1';
+    constexpr Color DEEPLAND_COLOR = { 35, 75, 30, 255 };
+    constexpr Color LAND_COLOR = { 55, 120, 50, 255 };
+    constexpr Color BEACH_COLOR = { 225, 225, 90, 255 };
     constexpr Color OCEAN_COLOR = { 25, 71, 149, 255 };
+    constexpr Color DEEPOCEAN_COLOR = { 15, 40, 80, 255 };
     constexpr Color UNKNOWN_COLOR = WHITE;
 
     // UI variable defines used to position buttons on screen

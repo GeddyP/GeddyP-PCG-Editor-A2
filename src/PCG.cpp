@@ -67,10 +67,16 @@ void PCG::TileMap::SetTile(int x, int y, TileType tileType)
 // ============================================= 
 Color PCG::TileMap::GetTileColor(PCG::TileType _tileType) const {
     switch (_tileType) {
+    case PCG::TileType::TILE_TYPE_DEEPLAND:
+		return DEEPLAND_COLOR;
     case PCG::TileType::TILE_TYPE_LAND:
         return LAND_COLOR;
-    case TILE_TYPE_OCEAN:
+	case PCG::TileType::TILE_TYPE_BEACH:
+        return BEACH_COLOR;
+    case PCG::TileType::TILE_TYPE_OCEAN:
         return OCEAN_COLOR;
+    case PCG::TileType::TILE_TYPE_DEEPOCEAN:
+		return DEEPOCEAN_COLOR;
     default:
         return UNKNOWN_COLOR;
     }
@@ -105,10 +111,16 @@ void PCG::TileMap::PrintMap() const {
 // ============================================= 
 char PCG::TileMap::GetTileChar(PCG::TileType _tileType) const {
     switch (_tileType) {
+    case PCG::TileType::TILE_TYPE_DEEPLAND:
+        return PCG::DEEPLAND_CHAR;
     case PCG::TileType::TILE_TYPE_LAND:
         return PCG::LAND_CHAR;
+    case PCG::TileType::TILE_TYPE_BEACH:
+        return PCG::BEACH_CHAR;
     case PCG::TileType::TILE_TYPE_OCEAN:
         return PCG::OCEAN_CHAR;
+    case PCG::TileType::TILE_TYPE_DEEPOCEAN:
+        return PCG::DEEPOCEAN_CHAR;
     default:
         return '?';
     }
@@ -169,6 +181,15 @@ void PCG::TileMap::LoadMapData(const char* _filename) {
             else if (ch == PCG::OCEAN_CHAR) {
                 tileArray[y][x] = PCG::TileType::TILE_TYPE_OCEAN;
             }
+            else if (ch == PCG::DEEPLAND_CHAR) {
+                tileArray[y][x] = PCG::TileType::TILE_TYPE_DEEPLAND;
+            }
+            else if (ch == PCG::DEEPOCEAN_CHAR) {
+                tileArray[y][x] = PCG::TileType::TILE_TYPE_DEEPOCEAN;
+            }
+            else if (ch == PCG::BEACH_CHAR) {
+                tileArray[y][x] = PCG::TileType::TILE_TYPE_BEACH;
+            }
         }
     }
 
@@ -203,7 +224,7 @@ void PCG::TileMap::SaveMapImage(const char* filename) const {
 // ============================================= 
 // void PCG_DrawGUI()
 // ============================================= 
-char PCG::TILE_TYPE_TO_SET = '.';
+char PCG::TILE_TYPE_TO_SET = '5';
 
 char* PCG::MAP_TEXT_FILENAME = "pcg_map_data.txt";
 char* PCG::MAP_IMAGE_FILENAME = "pcg_map.png";
@@ -245,13 +266,13 @@ void PCG::TileMap::DrawGUI() {
     // Set Tile Type to Land Button
 	Rectangle landRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 280, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
     if (GuiButton(landRect, "Set Tile: Land")) {
-        PCG::TILE_TYPE_TO_SET = '.';
+        PCG::TILE_TYPE_TO_SET = '5';
     }
 
     // Set Tile Type to Ocean Button
     Rectangle oceanRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 350, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
     if (GuiButton(oceanRect, "Set Tile: Ocean")) {
-        PCG::TILE_TYPE_TO_SET = '#';
+        PCG::TILE_TYPE_TO_SET = '1';
     }
 
 }
@@ -327,12 +348,21 @@ void PCG::NoiseMapGenerator::Generate(TileType _tileArray[MAP_ROWS][MAP_COLUMNS]
             Color col = GetImageColor(noiseImg, x, y);
             float brightness = (col.r + col.g + col.b) / (3.0f * 255.0f);
 
-            // Threshold: Dark spots are Rock, Light spots are Grass
-            if (brightness < 0.5f) {
-                _tileArray[y][x] = TILE_TYPE_OCEAN;
+            // Threshold:
+            if (brightness < 0.30f) {
+                _tileArray[y][x] = TILE_TYPE_DEEPOCEAN;
             }
-            else {
+            else if (brightness < 0.49f && brightness >= 0.30f) {
+				_tileArray[y][x] = TILE_TYPE_OCEAN;
+            }
+			else if (brightness < 0.51f && brightness >= 0.49f) {
+                _tileArray[y][x] = TILE_TYPE_BEACH;
+			}
+            else if (brightness < 0.70f && brightness >= 0.51f) {
                 _tileArray[y][x] = TILE_TYPE_LAND;
+			}
+            else if (brightness >= 0.70f) {
+                _tileArray[y][x] = TILE_TYPE_DEEPLAND;
             }
         }
     }
