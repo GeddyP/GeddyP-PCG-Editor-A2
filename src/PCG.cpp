@@ -15,7 +15,7 @@ PCG::TileMap::TileMap()
     // We can change this later using the CreateMap() function, or by setting individual tiles with SetTile().
     for (int y = 0; y < MAP_ROWS; y++) {
         for (int x = 0; x < MAP_COLUMNS; x++) {
-            tileArray[y][x] = TILE_TYPE_GRASS;
+            tileArray[y][x] = TILE_TYPE_LAND;
         }
     }
 
@@ -67,10 +67,10 @@ void PCG::TileMap::SetTile(int x, int y, TileType tileType)
 // ============================================= 
 Color PCG::TileMap::GetTileColor(PCG::TileType _tileType) const {
     switch (_tileType) {
-    case PCG::TileType::TILE_TYPE_GRASS:
-        return GRASS_COLOR;
-    case TILE_TYPE_ROCK:
-        return ROCK_COLOR;
+    case PCG::TileType::TILE_TYPE_LAND:
+        return LAND_COLOR;
+    case TILE_TYPE_OCEAN:
+        return OCEAN_COLOR;
     default:
         return UNKNOWN_COLOR;
     }
@@ -105,10 +105,10 @@ void PCG::TileMap::PrintMap() const {
 // ============================================= 
 char PCG::TileMap::GetTileChar(PCG::TileType _tileType) const {
     switch (_tileType) {
-    case PCG::TileType::TILE_TYPE_GRASS:
-        return PCG::GRASS_CHAR;
-    case PCG::TileType::TILE_TYPE_ROCK:
-        return PCG::ROCK_CHAR;
+    case PCG::TileType::TILE_TYPE_LAND:
+        return PCG::LAND_CHAR;
+    case PCG::TileType::TILE_TYPE_OCEAN:
+        return PCG::OCEAN_CHAR;
     default:
         return '?';
     }
@@ -163,11 +163,11 @@ void PCG::TileMap::LoadMapData(const char* _filename) {
             }
 
 
-            if (ch == PCG::GRASS_CHAR) {
-                tileArray[y][x] = PCG::TileType::TILE_TYPE_GRASS;
+            if (ch == PCG::LAND_CHAR) {
+                tileArray[y][x] = PCG::TileType::TILE_TYPE_LAND;
             }
-            else if (ch == PCG::ROCK_CHAR) {
-                tileArray[y][x] = PCG::TileType::TILE_TYPE_ROCK;
+            else if (ch == PCG::OCEAN_CHAR) {
+                tileArray[y][x] = PCG::TileType::TILE_TYPE_OCEAN;
             }
         }
     }
@@ -230,6 +230,7 @@ void PCG::TileMap::DrawGUI() {
     if (GuiButton(imgRect, "Save Map PNG")) {
         SaveMapImage(MAP_IMAGE_FILENAME);
     }
+
 }
 
 // =============================================
@@ -305,10 +306,10 @@ void PCG::NoiseMapGenerator::Generate(TileType _tileArray[MAP_ROWS][MAP_COLUMNS]
 
             // Threshold: Dark spots are Rock, Light spots are Grass
             if (brightness < 0.5f) {
-                _tileArray[y][x] = TILE_TYPE_ROCK;
+                _tileArray[y][x] = TILE_TYPE_OCEAN;
             }
             else {
-                _tileArray[y][x] = TILE_TYPE_GRASS;
+                _tileArray[y][x] = TILE_TYPE_LAND;
             }
         }
     }

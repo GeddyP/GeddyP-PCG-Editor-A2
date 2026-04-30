@@ -2,7 +2,7 @@
   rcore.c
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
   (compiling source file 'build/external/raylib-master/src/rcore.c')
-      E:\Raylib\Projects\PCG_Editor_WEEK6\build\external\raylib-master\src\external\glfw\include\GLFW\glfw3.h(123,1):
+      E:\Raylib\Projects\A2\GeddyP PCG Editor A2\build\external\raylib-master\src\external\glfw\include\GLFW\glfw3.h(123,1):
       see previous definition of 'APIENTRY'
   
   rglfw.c
@@ -10,9 +10,9 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\minwindef.h(1
   rshapes.c
   rtext.c
   rtextures.c
-E:\Raylib\Projects\PCG_Editor_WEEK6\build\external\raylib-master\src\rtextures.c(3735,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Raylib\Projects\PCG_Editor_WEEK6\build\external\raylib-master\src\rtextures.c(3735,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Raylib\Projects\PCG_Editor_WEEK6\build\external\raylib-master\src\rtextures.c(3735,35): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-E:\Raylib\Projects\PCG_Editor_WEEK6\build\external\raylib-master\src\rtextures.c(3735,42): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\build\external\raylib-master\src\rtextures.c(3735,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\build\external\raylib-master\src\rtextures.c(3735,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\build\external\raylib-master\src\rtextures.c(3735,35): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\build\external\raylib-master\src\rtextures.c(3735,42): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Generating Code...
-  raylib.vcxproj -> E:\Raylib\Projects\PCG_Editor_WEEK6\bin\Debug\raylib.lib
+  raylib.vcxproj -> E:\Raylib\Projects\A2\GeddyP PCG Editor A2\bin\Debug\raylib.lib

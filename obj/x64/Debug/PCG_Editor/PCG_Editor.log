@@ -1,1 +1,6 @@
-﻿  PCG_Editor.vcxproj -> E:\Raylib\Projects\PCG_Editor_WEEK6\bin\Debug\PCG_Editor.exe
+﻿  PCG.cpp
+  main.cpp
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(31,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(31,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  PCG_Editor.vcxproj -> E:\Raylib\Projects\A2\GeddyP PCG Editor A2\bin\Debug\PCG_Editor.exe
