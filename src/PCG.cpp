@@ -224,7 +224,7 @@ void PCG::TileMap::SaveMapImage(const char* filename) const {
 // ============================================= 
 // void PCG_DrawGUI()
 // ============================================= 
-char PCG::TILE_TYPE_TO_SET = '5';
+char PCG::TILE_TYPE_TO_SET = '1';
 
 char* PCG::MAP_TEXT_FILENAME = "pcg_map_data.txt";
 char* PCG::MAP_IMAGE_FILENAME = "pcg_map.png";
@@ -263,15 +263,35 @@ void PCG::TileMap::DrawGUI() {
         SaveMapImage(MAP_IMAGE_FILENAME);
     }
 
-    // Set Tile Type to Land Button
-	Rectangle landRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 280, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
-    if (GuiButton(landRect, "Set Tile: Land")) {
+    // SET TILE BUTTONS
+    // 
+    // Set Tile Type to Deep Land Button
+    Rectangle deeplandRect = { 10, PCG::BUTTON_Y - 280, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    if (GuiButton(deeplandRect, "Set Tile: Deep Land")) {
         PCG::TILE_TYPE_TO_SET = '5';
     }
 
+    // Set Tile Type to Land Button
+    Rectangle landRect = { 10, PCG::BUTTON_Y - 210, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    if (GuiButton(landRect, "Set Tile: Land")) {
+        PCG::TILE_TYPE_TO_SET = '4';
+    }
+
+    // Set Tile Type to Beach Button
+    Rectangle beachRect = { 10, PCG::BUTTON_Y - 140, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    if (GuiButton(beachRect, "Set Tile: Beach")) {
+        PCG::TILE_TYPE_TO_SET = '3';
+    }
+
     // Set Tile Type to Ocean Button
-    Rectangle oceanRect = { PCG::BUTTON_X, PCG::BUTTON_Y - 350, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    Rectangle oceanRect = { 10, PCG::BUTTON_Y - 70, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
     if (GuiButton(oceanRect, "Set Tile: Ocean")) {
+        PCG::TILE_TYPE_TO_SET = '2';
+    }
+
+    // Set Tile Type to Deep Ocean Button
+    Rectangle deepoceanRect = { 10, PCG::BUTTON_Y, PCG::BUTTON_WIDTH, PCG::BUTTON_HEIGHT };
+    if (GuiButton(deepoceanRect, "Set Tile: Deep Ocean")) {
         PCG::TILE_TYPE_TO_SET = '1';
     }
 

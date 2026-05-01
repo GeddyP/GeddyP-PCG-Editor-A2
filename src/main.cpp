@@ -28,13 +28,23 @@ int main() {
         if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
             Vector2 mousePos = GetMousePosition();
             std::cout << "Mouse clicked at: (" << mousePos.x << ", " << mousePos.y << ")" << std::endl;
-            if (PCG::TILE_TYPE_TO_SET == '5') {
+            if (PCG::TILE_TYPE_TO_SET == '4') {
                 tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_LAND);
             }
-            else if (PCG::TILE_TYPE_TO_SET == '1') {
+            else if (PCG::TILE_TYPE_TO_SET == '2') {
                 tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_OCEAN);
             }
-            //tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_LAND);
+            else if (PCG::TILE_TYPE_TO_SET == '3') {
+                tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_BEACH);
+            }
+            else if (PCG::TILE_TYPE_TO_SET == '5') {
+                tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_DEEPLAND);
+            }
+            else if (PCG::TILE_TYPE_TO_SET == '1') {
+                tileMap.SetTile(mousePos.x / PCG::TILE_SIZE, mousePos.y / PCG::TILE_SIZE, PCG::TileType::TILE_TYPE_DEEPOCEAN);
+            }
+
+            
         }
 
     }

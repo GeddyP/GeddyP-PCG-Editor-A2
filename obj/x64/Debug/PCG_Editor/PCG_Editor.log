@@ -1,2 +1,12 @@
-﻿  PCG.cpp
+﻿  main.cpp
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(32,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(32,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(35,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(35,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(38,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(38,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(41,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(41,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(44,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+E:\Raylib\Projects\A2\GeddyP PCG Editor A2\src\main.cpp(44,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   PCG_Editor.vcxproj -> E:\Raylib\Projects\A2\GeddyP PCG Editor A2\bin\Debug\PCG_Editor.exe
